@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheirinho de Ouro - Café Premium</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Cheirinho de Ouro</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Descubra o Verdadeiro Sabor do Café</h1>
+            <p>Café premium selecionado com paixão e expertise</p>
+            <a href="#menu" class="cta-button">Ver Menu</a>
+        </div>
+        <div class="newsletter-signup">
+            <h3>Receba nossas novidades</h3>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Seu melhor e-mail" required>
+                <button type="submit">Assinar</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="menu" class="menu">
+        <h2>Nosso Menu</h2>
+        <div class="menu-categories">
+            <button class="category-btn active" data-category="cafe">Cafés Especiais</button>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-items cafe">
+                <!-- Items will be added via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section id="produtos" class="produtos">
+        <h2>Nossos Produtos</h2>
+        <div class="produtos-grid">
+            <div class="produto-card">
+                <img src="https://images.unsplash.com/photo-1524350876685-274059332603?q=80&w=2071" alt="Café Tradicional">
+                <h3>Café Tradicional</h3>
+                <p>Blend perfeito para o dia a dia</p>
+                <span class="price">R$ 29,90</span>
+                <button class="add-to-cart">Comprar</button>
+            </div>
+            <div class="produto-card">
+                <img src="https://images.unsplash.com/photo-1655444177143-b88521308d8c?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Café Gourmet">
+                <h3>Café Gourmet</h3>
+                <p>Grãos selecionados especialmente</p>
+                <span class="price">R$ 39,90</span>
+                <button class="add-to-cart">Comprar</button>
+            </div>
+            <div class="produto-card">
+                <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?q=80&w=2070" alt="Café Especial">
+                <h3>Café Especial</h3>
+                <p>Edição limitada premium</p>
+                <span class="price">R$ 49,90</span>
+                <button class="add-to-cart">Comprar</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="blog">
+        <h2>Blog do Café</h2>
+        <div class="blog-grid">
+            <!-- Posts do blog serão carregados dinamicamente via JavaScript -->
+        </div>
+    </section>
+
+    <section id="depoimentos" class="depoimentos">
+        <h2>O que dizem nossos clientes</h2>
+        <div class="feedback-filters">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="5">5 Estrelas</button>
+            <button class="filter-btn" data-filter="4">4 Estrelas</button>
+            <button class="filter-btn" data-filter="3">3 Estrelas</button>
+            <button class="filter-btn" data-filter="2">2 Estrelas</button>
+            <button class="filter-btn" data-filter="1">1 Estrela</button>
+        </div>
+        <div class="depoimentos-slider">
+            <!-- Os depoimentos serão carregados dinamicamente via JavaScript -->
+        </div>
+    </section>
+
+    <section id="locais" class="locais">
+        <h2>Onde nos Encontrar</h2>
+        <div class="locais-container">
+            <div id="mapa"></div>
+            <div class="enderecos">
+                <div class="endereco">
+                    <h3>Loja Principal</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Rua do Café, 123 - Centro</p>
+                    <p><i class="fas fa-phone"></i> (11) 98123-4567/p>
+                    <p><i class="fas fa-clock"></i> Seg-Sex: 8h-20h</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fidelidade" class="fidelidade">
+        <h2>Programa de Fidelidade</h2>
+        <div class="fidelidade-content">
+            <div class="beneficios">
+                <div class="beneficio">
+                    <i class="fas fa-star"></i>
+                    <h3>Ganhe Pontos</h3>
+                    <p>A cada compra você acumula pontos para trocar por produtos</p>
+                </div>
+                <div class="beneficio">
+                    <i class="fas fa-gift"></i>
+                    <h3>Brindes Exclusivos</h3>
+                    <p>Receba brindes especiais em datas comemorativas</p>
+                </div>
+                <div class="beneficio">
+                    <i class="fas fa-percent"></i>
+                    <h3>Descontos Especiais</h3>
+                    <p>Aproveite descontos exclusivos para membros</p>
+                </div>
+            </div>
+            <a href="#" class="cta-button">Participar do Programa</a>
+        </div>
+    </section>
+
+    <section id="contato" class="contato">
+        <h2>Entre em Contato</h2>
+        <div class="contato-container">
+            <div class="contato-info">
+                <h3>Informações de Contato</h3>
+                <p><i class="fas fa-phone"></i> (11) 98123-4567</p>
+                <p><i class="fas fa-envelope"></i> cheirinhodeouro@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Rua do Café, 123 - São Paulo, SP</p>
+                <div class="horario">
+                    <h4>Horário de Funcionamento</h4>
+                    <p>Segunda a Sexta: 8h às 20h</p>
+                    <p>Sábados: 9h às 18h</p>
+                    <p>Domingos: 9h às 14h</p>
+                </div>
+            </div>
+            <form class="contato-form">
+                <input type="text" placeholder="Nome" required>
+                <input type="email" placeholder="E-mail" required>
+                <textarea placeholder="Mensagem" required></textarea>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <button class="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- Itens do carrinho serão adicionados via JavaScript -->
+        </div>
+        <div class="cart-total">
+            <p>Total: <span>R$ 0,00</span></p>
+            <button class="checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <div id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <section id="feedback" class="feedback">
+        <h2>Deixe seu Feedback</h2>
+        <div class="feedback-container">
+            <form id="feedbackForm" class="feedback-form">
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="rating">Avaliação</label>
+                    <div class="rating">
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1"><i class="fas fa-star"></i></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-feedback">Enviar Feedback</button>
+            </form>
+            <div id="feedbackSuccess" class="feedback-success">
+                <i class="fas fa-check-circle"></i>
+                <h3>Obrigado pelo seu feedback!</h3>
+                <p>Sua opinião é muito importante para nós.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="feedback-display" class="feedback-display">
+        <h2>Feedbacks dos Clientes</h2>
+        <div class="feedback-filters">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="5">5 Estrelas</button>
+            <button class="filter-btn" data-filter="4">4 Estrelas</button>
+            <button class="filter-btn" data-filter="3">3 Estrelas</button>
+            <button class="filter-btn" data-filter="2">2 Estrelas</button>
+            <button class="filter-btn" data-filter="1">1 Estrela</button>
+        </div>
+        <div class="feedback-grid">
+            <!-- Os feedbacks serão carregados dinamicamente via JavaScript -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Cheirinho de Ouro</div>
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#produtos">Produtos</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Programa Fidelidade</h4>
+                    <ul>
+                        <li><a href="#fidelidade">Como Funciona</a></li>
+                        <li><a href="#beneficios">Benefícios</a></li>
+                        <li><a href="#cadastro">Cadastre-se</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2024 Cheirinho de Ouro. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="blog.js"></script>
+    <script src="feedback.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
